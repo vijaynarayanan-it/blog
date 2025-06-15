@@ -4,7 +4,8 @@ title: "Vijay Narayanan"
 theme: "PaperMod"
 
 enableRobotsTXT: true
-paginate: 10
+pagination:
+  pagerSize: 10
 buildDrafts: false
 buildFuture: false
 buildExpired: false
