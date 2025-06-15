@@ -18,13 +18,13 @@ theme = "PaperMod"
 
 [[params.socialIcons]]
   name = "github"
-  url = "https://github.com/YOUR_USERNAME"
+  url = "https://github.com/vijaynarayanan-it"
 
 [[params.socialIcons]]
   name = "email"
-  url = "mailto:you@example.com"
+  url = "mailto:vijaynarayanan.it@gmail.com"
 
 [params.footer]
-  contact = "you@example.com"
+  contact = "vijaynarayanan.it@gmail.com"
   location = "Netherlands"
-  github = "https://github.com/YOUR_USERNAME"
+  github = "https://github.com/vijaynarayanan-it"
