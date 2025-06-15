@@ -3,14 +3,28 @@ languageCode: "en-us"
 title: "Vijay Narayanan"
 theme: "PaperMod"
 
+enableRobotsTXT: true
+paginate: 10
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+canonifyURLs: true
+
+# Disable Google Analytics partial error
 params:
+  env: "production"  # or "development"
+  disableGoogleAnalytics: true
+
   ShowReadingTime: true
   ShowShareButtons: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowToc: true
-  defaultTheme: "auto"  # Light/dark toggle
   ShowCodeCopyButtons: true
+  defaultTheme: "auto"  # auto/light/dark toggle support
+  ShowWordCount: true
+  ShowLastMod: true
+  comments: false
 
   homeInfoParams:
     Title: "Hi, I'm Vijay 👋"
@@ -22,7 +36,40 @@ params:
     - name: "email"
       url: "mailto:vijaynarayanan.it@gmail.com"
 
+  assets:
+    disableHLJS: false
+
   footer:
     contact: "vijaynarayanan.it@gmail.com"
     location: "Netherlands"
     github: "https://github.com/vijaynarayanan-it"
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 1
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 2
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 3
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 4
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON  # Required for search
+
+markup:
+  highlight:
+    noClasses: false
+    style: github-dark
