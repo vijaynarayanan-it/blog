@@ -1,30 +1,28 @@
-baseURL = "https://www.vijay-narayanan.com/"
-languageCode = "en-us"
-title = "Vijay Narayanan"
-theme = "PaperMod"
+baseURL: "https://www.vijay-narayanan.com/"
+languageCode: "en-us"
+title: "Vijay Narayanan"
+theme: "PaperMod"
 
-[params]
-  ShowReadingTime = true
-  ShowShareButtons = true
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowToc = true
-  defaultTheme = "auto"  # Light/dark toggle
-  ShowCodeCopyButtons = true
+params:
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowToc: true
+  defaultTheme: "auto"  # Light/dark toggle
+  ShowCodeCopyButtons: true
 
-[params.homeInfoParams]
-  Title = "Hi, I'm Vijay 👋"
-  Content = "Welcome to my blog. I'm a technologist passionate about DevOps, cloud infrastructure, and automation."
+  homeInfoParams:
+    Title: "Hi, I'm Vijay 👋"
+    Content: "Welcome to my blog. I'm a technologist passionate about DevOps, cloud infrastructure, and automation."
 
-[[params.socialIcons]]
-  name = "github"
-  url = "https://github.com/vijaynarayanan-it"
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/vijaynarayanan-it"
+    - name: "email"
+      url: "mailto:vijaynarayanan.it@gmail.com"
 
-[[params.socialIcons]]
-  name = "email"
-  url = "mailto:vijaynarayanan.it@gmail.com"
-
-[params.footer]
-  contact = "vijaynarayanan.it@gmail.com"
-  location = "Netherlands"
-  github = "https://github.com/vijaynarayanan-it"
+  footer:
+    contact: "vijaynarayanan.it@gmail.com"
+    location: "Netherlands"
+    github: "https://github.com/vijaynarayanan-it"
