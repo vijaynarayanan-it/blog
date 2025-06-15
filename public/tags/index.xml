@@ -2,10 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Vijay Narayanan</title>
-    <link>https://www.vijay-narayanan.com/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Vijay Narayanan</description>
     <generator>Hugo -- 0.147.8</generator>
     <language>en-us</language>
-    <atom:link href="https://www.vijay-narayanan.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Jun 2025 09:30:42 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloudflare</title>
+      <link>http://localhost:1313/tags/cloudflare/</link>
+      <pubDate>Sun, 15 Jun 2025 09:30:42 +0200</pubDate>
+      <guid>http://localhost:1313/tags/cloudflare/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Homelab</title>
+      <link>http://localhost:1313/tags/homelab/</link>
+      <pubDate>Sun, 15 Jun 2025 09:30:42 +0200</pubDate>
+      <guid>http://localhost:1313/tags/homelab/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Networking</title>
+      <link>http://localhost:1313/tags/networking/</link>
+      <pubDate>Sun, 15 Jun 2025 09:30:42 +0200</pubDate>
+      <guid>http://localhost:1313/tags/networking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Proxmox</title>
+      <link>http://localhost:1313/tags/proxmox/</link>
+      <pubDate>Sun, 15 Jun 2025 09:30:42 +0200</pubDate>
+      <guid>http://localhost:1313/tags/proxmox/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>http://localhost:1313/tags/security/</link>
+      <pubDate>Sun, 15 Jun 2025 09:30:42 +0200</pubDate>
+      <guid>http://localhost:1313/tags/security/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

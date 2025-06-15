@@ -1,4 +1,119 @@
-baseURL: https://example.org/
+baseURL: https://www.vijay-narayanan.com/
 languageCode: en-us
-title: My New Hugo Site
+title: Vijay Narayanan
 theme: PaperMod
+
+enableRobotsTXT: true
+canonifyURLs: true # Canonical URLs for SEO
+
+# Build options
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+# Pagination
+pagination:
+  pagerSize: 10
+
+# Syntax highlighting
+pygmentsUseClasses: true # Use CSS classes for syntax highlighting
+
+markup:
+  highlight:
+    noClasses: false # Use CSS classes for syntax highlighting
+    style: github-dark # Use GitHub dark theme for code highlighting
+
+# Ignore specific warnings
+ignoreLogs: ["warning-goldmark-raw-html"]
+
+# Params for site appearance and features
+params:
+  env: production  # or "development"
+  title: Vijay Narayanan - Blog
+  description: I write about technology, programming, and my experiences in the tech industry.
+  author: vijay
+
+  # Header/Top bar
+  defaultTheme: "auto"  # auto/light/dark toggle support
+  disableThemeToggle: false
+  disableScrollToTop: false
+
+  # Main content
+  ShowReadingTime: true
+  ShowWordCount: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowToc: true # To show table of contents
+  tocopen: tue # Open table of contents by default
+  ShowCodeCopyButtons: true
+  ShowLastMod: true # Show last modified date on posts
+  hidemeta: false
+  hideSummary: false
+  comments: true # Enable comments on posts
+  DateFormat: "January 1, 2006"
+  disableGoogleAnalytics: true
+
+  # Cover images
+  cover:
+    hidden: false # hide everywhere but not in structured data
+    hiddenInList: false # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+  # Profile mode
+  profileMode:
+    enabled: false
+
+  # Main sections
+  mainSections:
+    - posts
+
+  # Social icons (top or bottom)
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/vijaynarayanan-it"
+    - name: "email"
+      url: "mailto:vijaynarayanan.it@gmail.com"
+
+  # Assets
+  assets:
+    disableHLJS: false
+
+  # Footer
+  footer:
+    contact: "vijaynarayanan.it@gmail.com"
+    location: "Netherlands"
+    github: "https://github.com/vijaynarayanan-it"
+
+  # Search
+  search:
+    enabled: true
+    provider: "lunr" # or "fuse" for enabling search functionality
+    minLength: 3
+
+# Menu (navigation)
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 1
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 2
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 3
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 4
+
+# Output formats
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON  # Required for search functionality

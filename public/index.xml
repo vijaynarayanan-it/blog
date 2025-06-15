@@ -2,18 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Home on Vijay Narayanan</title>
-    <link>https://www.vijay-narayanan.com/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content in Home on Vijay Narayanan</description>
     <generator>Hugo -- 0.147.8</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 15 Jun 2025 09:30:42 +0200</lastBuildDate>
-    <atom:link href="https://www.vijay-narayanan.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello World Vijay!</title>
-      <link>https://www.vijay-narayanan.com/posts/hello-world/</link>
+      <title>Proxmox VE Homelab Setup Guide</title>
+      <link>http://localhost:1313/posts/proxmox-ve-homelab-setup/</link>
       <pubDate>Sun, 15 Jun 2025 09:30:42 +0200</pubDate>
-      <guid>https://www.vijay-narayanan.com/posts/hello-world/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/proxmox-ve-homelab-setup/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;This guide shows you how to set up a secure and flexible Proxmox VE homelab. You will:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Isolate your VM network but keep internet access.&lt;/li&gt;
+&lt;li&gt;Securely access the Proxmox web UI using Cloudflare Tunnel and custom DNS.&lt;/li&gt;
+&lt;li&gt;Block direct IP access to the Proxmox UI.&lt;/li&gt;
+&lt;li&gt;Prepare for adding more services in the future.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt=&#34;proxmox-ve-setup-title-image.png&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/proxmox-ve-setup-title-image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;prerequisite&#34;&gt;&lt;strong&gt;Prerequisite&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Before you start, ensure you have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Already installed Proxmox VE on your machine.&lt;/li&gt;
+&lt;li&gt;A basic understanding of Linux command line.&lt;/li&gt;
+&lt;li&gt;A Cloudflare account with a domain set up (e.g., &lt;code&gt;yourdomain.com&lt;/code&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;example-values-we-are-going-to-use&#34;&gt;&lt;strong&gt;Example values we are going to use&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Assuming you have a Proxmox VE installation with the following network configuration:
+Note that these values are examples; you should replace them with your actual network settings.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
