@@ -27,9 +27,13 @@ params:
   ShowLastMod: true
   comments: false
 
+  profileMode:
+    enabled: false
   homeInfoParams:
     Title: "Hi, I'm Vijay 👋"
-    Content: "Welcome to my blog. I'm a technologist passionate about DevOps, cloud infrastructure, and automation."
+    Content: "Welcome to my blog..."
+  mainSections:
+    - posts
 
   socialIcons:
     - name: "github"
