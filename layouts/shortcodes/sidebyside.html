@@ -1,0 +1,8 @@
+<div class="side-by-side-container">
+    <div class="side-image">
+        <img src="{{ .Get "img" }}" alt="Profile picture">
+    </div>
+    <div class="side-text">
+        {{ .Inner | markdownify }}
+    </div>
+</div>

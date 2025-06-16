@@ -1,0 +1,16 @@
+.side-by-side-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.side-image img {
+  max-width: 220px;
+  height: 110px;
+}
+
+.side-text {
+  flex: 1;
+  min-width: 280px;
+}

@@ -1,7 +1,8 @@
 ---
 date: '2025-06-15T09:30:42+02:00'
 draft: false
-title: 'Disable Proxmox Enterprise Subscription Alert'
+title: 'How to Remove the Proxmox VE Subscription Warning and Switch to No-Subscription Repository'
+slug: 'proxmox-remove-subscription-warning'
 tags: [proxmox, homelab]
 ---
 # How to Remove the Proxmox VE Subscription Warning

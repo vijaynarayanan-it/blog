@@ -5,7 +5,7 @@
     <loc>http://localhost:1313/tags/cloudflare/</loc>
     <lastmod>2025-06-15T09:30:42+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/proxmox-disable-proxmox-subscription-enterprise-alert/</loc>
+    <loc>http://localhost:1313/posts/proxmox-remove-subscription-warning/</loc>
     <lastmod>2025-06-15T09:30:42+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
@@ -23,7 +23,7 @@
     <loc>http://localhost:1313/tags/proxmox/</loc>
     <lastmod>2025-06-15T09:30:42+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/proxmox-ve-homelab-setup/</loc>
+    <loc>http://localhost:1313/posts/secure-proxmox-ve-homelab-cloudflare-tunnel/</loc>
     <lastmod>2025-06-15T09:30:42+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/security/</loc>

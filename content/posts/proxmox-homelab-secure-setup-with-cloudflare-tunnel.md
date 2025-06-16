@@ -1,7 +1,8 @@
 ---
 date: '2025-06-15T09:30:42+02:00'
 draft: false
-title: 'Proxmox VE Homelab Setup Guide'
+title: 'Secure and Isolated Proxmox VE Homelab with Cloudflare Tunnel'
+slug: 'proxmox-homelab-secure-setup-with-cloudflare-tunnel'
 tags: [proxmox, homelab, cloudflare, networking, security]
 ---
 

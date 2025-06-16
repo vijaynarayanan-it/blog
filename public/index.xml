@@ -10,10 +10,13 @@
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Disable Proxmox Enterprise Subscription Alert</title>
-      <link>http://localhost:1313/posts/proxmox-disable-proxmox-subscription-enterprise-alert/</link>
+      <link>http://localhost:1313/posts/proxmox-remove-subscription-warning/</link>
       <pubDate>Sun, 15 Jun 2025 09:30:42 +0200</pubDate>
-      <guid>http://localhost:1313/posts/proxmox-disable-proxmox-subscription-enterprise-alert/</guid>
-      <description>&lt;h1 id=&#34;how-to-remove-the-proxmox-ve-subscription-warning&#34;&gt;How to Remove the Proxmox VE Subscription Warning&lt;/h1&gt;
+      <guid>http://localhost:1313/posts/proxmox-remove-subscription-warning/</guid>
+      <description>&lt;h2 id=&#34;tags-proxmox-homelab&#34;&gt;ion Repository&#39;
+slug: &amp;lsquo;proxmox-remove-subscription-warning&amp;rsquo;
+tags: [proxmox, homelab]&lt;/h2&gt;
+&lt;h1 id=&#34;how-to-remove-the-proxmox-ve-subscription-warning&#34;&gt;How to Remove the Proxmox VE Subscription Warning&lt;/h1&gt;
 &lt;p&gt;&lt;img alt=&#34;Proxmox Subscription Warning Image&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/proxmox-ve-enterprise-subscription-alert-box-screenshot.jpeg&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;If you don’t have a paid Proxmox subscription, you’ll see a warning about the Enterprise repository. This is normal for home labs, but you can easily switch to the free no-subscription repository and get rid of the alert.&lt;/p&gt;
@@ -29,10 +32,10 @@
 &lt;p&gt;Just add a &lt;code&gt;#&lt;/code&gt; at the start of the line so it looks like this:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Proxmox VE Homelab Setup Guide</title>
-      <link>http://localhost:1313/posts/proxmox-ve-homelab-setup/</link>
+      <title>Secure and Isolated Proxmox VE Homelab with Cloudflare Tunnel</title>
+      <link>http://localhost:1313/posts/proxmox-homelab-secure-setup-with-cloudflare-tunnel/</link>
       <pubDate>Sun, 15 Jun 2025 09:30:42 +0200</pubDate>
-      <guid>http://localhost:1313/posts/proxmox-ve-homelab-setup/</guid>
+      <guid>http://localhost:1313/posts/proxmox-homelab-secure-setup-with-cloudflare-tunnel/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;This guide shows you how to set up a secure and flexible Proxmox VE homelab. You will:&lt;/p&gt;
 &lt;ul&gt;
