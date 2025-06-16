@@ -6,6 +6,8 @@ tags: [proxmox, homelab]
 ---
 # How to Remove the Proxmox VE Subscription Warning
 
+![Proxmox Subscription Warning Image](/images/proxmox-ve-enterprise-subscription-alert-box-screenshot.jpeg)
+
 ## Introduction
 
 If you don’t have a paid Proxmox subscription, you’ll see a warning about the Enterprise repository. This is normal for home labs, but you can easily switch to the free no-subscription repository and get rid of the alert.
