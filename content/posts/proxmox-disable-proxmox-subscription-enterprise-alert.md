@@ -1,32 +1,28 @@
-# How to Remove Enterprise Proxmox VE Subscription
+---
+date: '2025-06-15T09:30:42+02:00'
+draft: false
+title: 'Disable Proxmox Enterprise Subscription Alert'
+tags: [proxmox, homelab]
+---
+# How to Remove the Proxmox VE Subscription Warning
 
-## **Introduction**
+## Introduction
 
-Proxmox tries to access the Enterprise repositories, which require a paid subscription. Without a subscription, access is denied with a `401 Unauthorized` error.
-
-### How to Fix (Use the No-Subscription Repository):
-
-You can switch from the Enterprise repository to the No-Subscription repository, which is free to use and intended for home labs and non-commercial setups.
+If you don’t have a paid Proxmox subscription, you’ll see a warning about the Enterprise repository. This is normal for home labs, but you can easily switch to the free no-subscription repository and get rid of the alert.
 
 ---
 
-### Step-by-Step Fix:
+## Steps to Fix the Warning
 
-1. **Edit the Proxmox APT sources:**
+1. **Open the Proxmox APT sources file:**
 
 ```
 nano /etc/apt/sources.list.d/pve-enterprise.list
 ```
 
-2. **Comment out or delete the enterprise repo:**
+2. **Disable the enterprise repository:**
 
-Change:
-
-```
-deb https://enterprise.proxmox.com/debian/pve bookworm pve-enterprise
-```
-
-To:
+Just add a `#` at the start of the line so it looks like this:
 
 ```
 # deb https://enterprise.proxmox.com/debian/pve bookworm pve-enterprise
@@ -34,38 +30,38 @@ To:
 
 3. **Add the no-subscription repository:**
 
+Open your main sources list:
+
 ```
 nano /etc/apt/sources.list
 ```
 
-Add this line if it's not already present:
+Add this line if it’s not already there:
 
 ```
 deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription
 ```
 
-4. **(Optional) If using Ceph, also disable the enterprise Ceph repo:**
+4. **(Optional) If you use Ceph, disable the enterprise Ceph repo:**
 
-Edit:
+Edit the Ceph sources file:
 
 ```
 nano /etc/apt/sources.list.d/ceph.list
 ```
 
-Comment out:
+Comment out the enterprise line and add the no-subscription one:
 
 ```
-deb https://enterprise.proxmox.com/debian/ceph-quincy bookworm enterprise
-```
-
-Replace it with (or just add this in your `/etc/apt/sources.list`):
-
-```
+# deb https://enterprise.proxmox.com/debian/ceph-quincy bookworm enterprise
 deb http://download.proxmox.com/debian/ceph-quincy bookworm no-subscription
 ```
 
-5. **Update APT again:**
+5. **Update your package lists:**
 
 ```
 apt-get update
+```
+
+That’s it! The warning should be gone, and you’ll still get updates from the free repository.
 ```
