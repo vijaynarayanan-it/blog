@@ -77,7 +77,8 @@ params:
 
   # Assets
   assets:
-    disableHLJS: false
+    disableHLJS: true
+    favicon: "assets/favicon.ico"
 
   # Footer
   footer:
