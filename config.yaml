@@ -30,7 +30,8 @@ ignoreLogs: ["warning-goldmark-raw-html"]
 params:
   env: production  # or "development"
   title: Vijay Narayanan - Blog
-  description: I write about technology, programming, and my experiences in the tech industry.
+  description: "Personal website and blog of Vijay Narayanan"
+  keywords: ["Vijay Narayanan", "Tech Blog", "Personal Website"]
   author: vijay
 
   # Header/Top bar
@@ -79,6 +80,11 @@ params:
   assets:
     disableHLJS: true
     favicon: "assets/favicon.ico"
+    disableFingerprinting: true
+    markup:
+      goldmark:
+        renderer:
+          unsafe: true
 
   # Footer
   footer:
