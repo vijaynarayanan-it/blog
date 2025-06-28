@@ -35,7 +35,7 @@ params:
   author: vijay
 
   # Header/Top bar
-  defaultTheme: "auto"  # auto/light/dark toggle support
+  defaultTheme: "light"  # auto/light/dark toggle support
   disableThemeToggle: false
   disableScrollToTop: false
 
