@@ -48,11 +48,11 @@ params:
   ShowToc: true # To show table of contents
   tocopen: tue # Open table of contents by default
   ShowCodeCopyButtons: true
-  ShowLastMod: true # Show last modified date on posts
   hidemeta: false
   hideSummary: false
   comments: true # Enable comments on posts
-  DateFormat: "January 1, 2006"
+  ShowLastMod: true # Show last modified date on posts
+  DateFormat: "02 January, 2006"
   disableGoogleAnalytics: true
 
   # Cover images

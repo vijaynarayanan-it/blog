@@ -1,12 +1,12 @@
 ---
-date: '2025-06-15T09:30:42+02:00'
+date: 2025-02-10
 draft: false
-title: 'Secure and Isolated Proxmox VE Homelab with Cloudflare Tunnel'
-slug: 'proxmox-homelab-secure-setup-with-cloudflare-tunnel'
-tags: [proxmox, homelab, cloudflare, networking, security]
+title: 'Secure and Isolated Proxmox with Cloudflare Tunnel'
+slug: 'secure-proxmox-with-cloudflare-tunnel'
+tags: [proxmox, homelab]
 ---
 
-## **Introduction**
+## Introduction
 
 This guide shows you how to set up a secure and flexible Proxmox VE homelab. You will:
 
@@ -17,34 +17,39 @@ This guide shows you how to set up a secure and flexible Proxmox VE homelab. You
 
 ![proxmox-ve-setup-title-image.png](/images/proxmox-ve-setup-title-image.png)
 
-## **Prerequisite**
+## Prerequisite
 
 Before you start, ensure you have:
 
 - Already installed Proxmox VE on your machine.
 - A basic understanding of Linux command line.
 - A Cloudflare account with a domain set up (e.g., `yourdomain.com`).
+- Already created a linux bridge network in Proxmox for your VMs. Check out my blog post on [How to Configure DHCP Server to Create vmbr Bridge Network](https://www.vijay-narayanan.com/posts/how-to-configure-dhcp-server-to-create-vmbr-bridge-network) for guidance.
 
-## **Example values we are going to use**
+## Example values we are going to use
 
 Assuming you have a Proxmox VE installation with the following network configuration:
-Note that these values are examples; you should replace them with your actual network settings.
+Note that these values are examples. You should replace them with your actual network settings.
 
-- **LAN IP**: `10.20.30.40/24`
-- **Gateway/DNS**: `10.20.30.1`
-- **Hostname**: `homelab.yourdomain.com`
-- **Domain**: `yourdomain.com` (Cloudflare-managed)
+| Setting         | Example Value                | Description                |
+|-----------------|-----------------------------|----------------------------|
+| **LAN IP**      | `10.20.30.40/24`            | Proxmox server IP address  |
+| **Gateway/DNS** | `10.20.30.1`                | Default gateway and DNS    |
+| **Hostname**    | `homelab.yourdomain.com`    | Proxmox hostname           |
+| **Domain**      | `yourdomain.com`            | Cloudflare-managed domain  |
 
 ---
 
-## **Step 1: Initial Proxmox VE Setup**
+## Steps to Secure and Isolate Proxmox VE Homelab
+
+### Step 1: Initial Proxmox VE Setup
 
 ```
 apt-get update
 apt-get upgrade
 ```
 
-0.0 Open `/etc/hostname` and set the following entry:
+#### Step 1.1: Open `/etc/hostname` and set the following entry:
 
 You can use any hostname you prefer, but for this guide, we will use: homelab
 
@@ -52,27 +57,22 @@ You can use any hostname you prefer, but for this guide, we will use: homelab
 homelab
 ```
 
-0.1 Open and check values for `/etc/hosts`:
+#### Step 1.2: Open and check values for `/etc/hosts`:
 
 ```
 127.0.0.1 localhost.localdomain localhost
 10.20.30.40 homelab.yourdomain.com homelab
-
-# The following lines are desirable for IPv6 capable hosts
-
-::1     ip6-localhost ip6-loopback
-fe00::0 ip6-localnet
-ff00::0 ip6-mcastprefix
-ff02::1 ip6-allnodes
-ff02::2 ip6-allrouters
-ff02::3 ip6-allhosts
 ```
 
-## Part 1: Isolate your VM network but keep internet access.
+---
+
+### Step 2: Isolate your VM network but keep internet access
+
+To create an isolated linux bridge network, check out my blog [How to Configure DHCP Server to Create vmbr Bridge Network](https://www.vijay-narayanan.com/posts/how-to-configure-dhcp-server-to-create-vmbr-bridge-network).
 
 If you want your Proxmox and its VMs on an isolated internal virtual network, but still able to access the internet. Follow these steps:
 
-### Step 1.1: Network Plan
+#### Step 2.1: Network Plan
 
 Use Proxmox’s Linux bridges for VM/Container networks.
 
@@ -80,7 +80,7 @@ Use Proxmox’s Linux bridges for VM/Container networks.
 - `vmbr1`: Internal-only isolated virtual bridge (no physical NIC attached)
 - Configure NAT for `vmbr1` to allow internet for VMs while keeping them isolated
 
-### Step 1.2: Create NAT Bridge (Isolated VM Network)
+#### Step 2.2: Create NAT Bridge (Isolated VM Network)
 
 Edit `/etc/network/interfaces`:
 
@@ -126,18 +126,18 @@ Now, your VMs on `vmbr1` can access the internet but are not exposed to your LAN
 
 ---
 
-## Part 2: Secure Remote Access via Cloudflare Tunnel
+### Step 3: Secure Remote Access via Cloudflare Tunnel
 
 To expose the Proxmox UI (`8006`) securely via your domain, use Cloudflare Tunnel (`cloudflared`). No port forwarding is needed.
 
-### Step 2.1: Install `cloudflared` on Proxmox
+#### Step 3.1: Install `cloudflared` on Proxmox
 
 ```
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
 sudo dpkg -i cloudflared-linux-amd64.deb
 ```
 
-### Step 2.2: Authenticate with Cloudflare
+#### Step 3.2: Authenticate with Cloudflare
 
 ```
 cloudflared tunnel login
@@ -145,7 +145,7 @@ cloudflared tunnel login
 
 Follow the browser instructions. Select your domain: `yourdomain.com`.
 
-### Step 2.3: Create the Tunnel
+#### Step 3.3: Create the Tunnel
 
 ```
 cloudflared tunnel create proxmox-tunnel
@@ -153,7 +153,7 @@ cloudflared tunnel create proxmox-tunnel
 
 This gives a tunnel UUID like `a1b2c3d4...`
 
-### Step 2.4: Configure the Tunnel
+#### Step 3.4: Configure the Tunnel
 
 Create `/etc/cloudflared/config.yml`:
 
@@ -169,7 +169,7 @@ ingress:
   - service: http_status:404
 ```
 
-### Step 2.5: Route DNS in Cloudflare
+#### Step 3.5: Route DNS in Cloudflare
 
 Run below command. This will create a DNS record in Cloudflare for your tunnel.
 
@@ -177,7 +177,7 @@ Run below command. This will create a DNS record in Cloudflare for your tunnel.
 cloudflared tunnel route dns proxmox-tunnel homelab.yourdomain.com
 ```
 
-### Step 2.6: Run the Tunnel as a Service
+#### Step 3.6: Run the Tunnel as a Service
 
 ```
 cloudflared service install
@@ -188,49 +188,40 @@ Now, only users with access to `homelab.yourdomain.com` via Cloudflare can acces
 
 ---
 
-### Step 2.7: Block IP Access to `https://<your-proxmox-ip>:8006`
+### Step 4: Block IP Access to `https://<your-proxmox-ip>:8006`
 
 We’ll achieve this using Proxmox firewall rules using `iptables`.
 
----
-
 Use `iptables` (if you don’t want to use Proxmox firewall)
 
-Run the following:
+#### Step 4.1: Block direct access to Proxmox UI
 
 ```
 iptables -A INPUT -p tcp --dport 8006 ! -s 127.0.0.1 -j DROP
 ```
 
-To persist this:
-
-1. Install iptables-persistent:
+#### Step 4.2: Save the iptables rules by running below command
 
 ```
 apt install iptables-persistent
-```
-
-2. Save rules:
-
-```
 iptables-save > /etc/iptables/rules.v4
 ```
 
 ---
 
-## Verify It Works
+### Step 5: Verify It Works
 
 Now try:
 
 - `https://<your-public-LAN-IP>:8006` → Should fail (connection refused or timeout)
 - `https://homelab.yourdomain.com` → Should work perfectly
 
-## Summary
-
-| Goal | Setup Summary                                                    |
-|---|------------------------------------------------------------------|
-| Isolated network with internet | Create `vmbr1`, apply NAT masquerading via `vmbr0`               |
-| Secure remote Proxmox access | Use Cloudflare Tunnel and custom DNS (`homelab.yourdomain.com`)  |
-| Block access via IP/Port | web UI to `127.0.0.1:8006` should be blocked                     |
-
 ---
+
+## Conclusion
+
+| Objective | Implementation Details                                        |
+|---|---------------------------------------------------------------|
+| Isolated network with internet | Created `vmbr1`, apply NAT masquerading via `vmbr0`           |
+| Secure remote Proxmox access | Used Cloudflare Tunnel and custom DNS (`homelab.yourdomain.com`) |
+| Block access via IP/Port | web UI to `127.0.0.1:8006` blocked                    |
