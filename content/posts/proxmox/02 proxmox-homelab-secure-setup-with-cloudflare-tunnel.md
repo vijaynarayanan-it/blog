@@ -3,7 +3,7 @@ date: 2025-02-10
 draft: false
 title: 'Secure and Isolated Proxmox with Cloudflare Tunnel'
 slug: 'secure-proxmox-with-cloudflare-tunnel'
-tags: [proxmox, homelab]
+tags: [proxmox, 🏠 homelab]
 ---
 
 ## Introduction

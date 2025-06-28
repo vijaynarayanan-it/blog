@@ -3,7 +3,7 @@ date: 2025-02-10
 draft: false
 title: 'How to Remove Proxmox Subscription Warning'
 slug: 'proxmox-remove-subscription-warning'
-tags: [proxmox, homelab]
+tags: [proxmox, 🏠 homelab]
 ---
 
 ## Introduction

@@ -3,7 +3,7 @@ date: 2025-02-15
 draft: false
 title: 'How to install Metrics Server on Kubernetes'
 slug: 'install-metrics-server-kubernetes'
-tags: [kubernetes]
+tags: [☸️ kubernetes]
 ---
 
 # Introduction
