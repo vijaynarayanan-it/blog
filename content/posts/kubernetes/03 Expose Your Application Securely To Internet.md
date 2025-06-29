@@ -164,6 +164,7 @@ spec:
           secret:
             secretName: cloudflared-creds
 ```
+
 Explanation:
  - `args`: The command to run the Cloudflare Tunnel with the specified configuration file.
  - `volumeMounts`: Mounts the ConfigMap and secret containing the Cloudflare Tunnel configuration and credentials. This is the path above ConfigMap uses `/etc/cloudflared/creds/nginx-tunnel-credential.json`.
@@ -218,4 +219,3 @@ Whola! Your application is now exposed securely to the internet.
 In this guide, we have successfully exposed a Kubernetes application securely to the internet using Cloudflare Tunnel and Nginx Ingress. This setup allows you to leverage Cloudflare's security features while managing your application traffic efficiently.
 
 ---
-
