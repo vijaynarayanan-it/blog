@@ -31,7 +31,7 @@ params:
   env: production  # or "development"
   title: Vijay Narayanan - Blog
   description: "Personal website and blog of Vijay Narayanan"
-  keywords: ["Vijay Narayanan", "Tech Blog", "Personal Website"]
+  keywords: ["Vijay Narayanan", "Tech Blog", "Personal Website", "vijay narayanan", "vijay's blog"]
   author: vijay
 
   # Header/Top bar
