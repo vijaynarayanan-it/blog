@@ -2,7 +2,7 @@
 date: 2025-02-18
 draft: false
 title: 'Expose Kubernetes Applications Securely to the Internet with Cloudflare Tunnel and Nginx Ingress'
-slug: 'kubernetes-expose-app-cloudflare-tunnel-nginx-ingress'
+slug: 'expose-k8s-apps-to-internet-using-cloudflare-tunnel'
 tags: [☸️ kubernetes, 🌐 cloudflare]
 ---
 

@@ -11,6 +11,16 @@ tags: [🛡️ security]
 This guide will help you identify if your public IP address has any open ports or services that could be unintentionally exposed to the internet.
 This is crucial for maintaining the security of your network and devices.
 
+Based on RFC1918, private IP addresses are not routable on the public internet.
+
+What is RFC1918?
+
+- RFC1918 is a standard that defines private IP address ranges that are reserved for use within private networks.
+- RFC1918 designates the following three ranges for private networks:
+  - 10.0.0.0 - 10.255.255.255: (10.0.0.0/8)
+  - 172.16.0.0 - 172.31.255.255: (172.16.0.0/12)
+  - 192.168.0.0 - 192.168.255.255: (192.168.0.0/16)
+
 # Steps
 
 You can use online tools to scan your public IP address for open ports and services.
