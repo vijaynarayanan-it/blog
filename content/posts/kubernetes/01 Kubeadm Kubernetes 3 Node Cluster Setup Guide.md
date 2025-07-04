@@ -6,6 +6,8 @@ slug: 'kubeadm-kubernetes-3-node-cluster-setup-guide'
 tags: [☸️ kubernetes, kubeadm]
 ---
 
+![kubeadm-3node-cluster-setup.png](/images/kubeadm-3node-cluster-setup.png)
+
 ## Introduction
 
 This guide will walk you through the following steps to set up a 3-node Kubernetes cluster using kubeadm:
@@ -280,6 +282,8 @@ worker-node02  Ready    <none>
 
 #### Step 9.1: Set up kubeconfig for root user
 
+On the control plane node, only if you want to use kubectl from your controlplane node as root user.
+
 ```bash
 sudo cp /etc/kubernetes/admin.conf /root/.kube/config
 sudo chown root:root /root/.kube/config
@@ -294,6 +298,7 @@ echo "alias k=kubectl" >> ~/.bashrc
 echo "complete -F __start_kubectl k" >> ~/.bashrc
 source ~/.bashrc
 ```
+
 ---
 
 ## Conclusion
