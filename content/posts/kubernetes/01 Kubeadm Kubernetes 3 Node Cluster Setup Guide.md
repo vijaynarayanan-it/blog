@@ -156,7 +156,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 ---
 
-### Step 6: Initialize the ControlPlane Node
+### Step 6: Initialize the ControlPlane Node (Only on controlplane node)
 
 #### Step 6.1: Initialize the kubeadm on control plane
 
@@ -184,7 +184,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 ---
 
-### Step 7: Install Calico CNI for Pod Networking
+### Step 7: Install Calico CNI for Pod Networking (Only on controlplane node)
 
 Since our CIDR for pod and service are below:
 
@@ -205,7 +205,7 @@ curl -O https://raw.githubusercontent.com/projectcalico/calico/v3.27.2/manifests
 #### Step 7.2: Edit Calico Manifest
 
 ```bash
-sudo nano `calico.yaml`:
+sudo nano calico.yaml
 ```
 
 Search for the following block:
@@ -223,8 +223,13 @@ Make sure it matches your `--pod-network-cidr` you used during `kubeadm init`.
 kubectl apply -f calico.yaml -n kube-system
 ```
 
-Wait for the Calico pods to be up and running. Example output:
+Wait for the Calico pods to be up and running.
 
+```bash
+kubectl get pods -n kube-system
+```
+
+Example output:
 ```
 vijay@controlplane:~$ kubectl get pods -n kube-system
 NAME                                        READY   STATUS    RESTARTS        AGE
