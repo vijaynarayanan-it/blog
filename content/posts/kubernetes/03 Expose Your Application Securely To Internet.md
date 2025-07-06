@@ -70,10 +70,10 @@ You can check the list of tunnels created by running:
 
 ```bash
 sudo cloudflared tunnel list
-sudo cloudflared tunnel info <tunnel-name>
+sudo cloudflared tunnel info nginx-tunnel
 ```
 
-Copy the tunnel ID and certificate file path for later use. I would recommend to rename the certificate file to something more meaningful, like `nginx-tunnel-credential.json`.
+Copy the tunnel ID and certificate file path for later use. I would recommend renaming the certificate file to something more meaningful, like `nginx-tunnel-credential.json`.
 
 ```bash
 sudo cp /home/vijay/.cloudflared/lmnop-0ce8-efgh-8c67-abcd.json /home/vijay/.cloudflared/nginx-tunnel-credential.json
@@ -83,11 +83,11 @@ sudo cp /home/vijay/.cloudflared/lmnop-0ce8-efgh-8c67-abcd.json /home/vijay/.clo
 
 ### Step 4: Create a Kubernetes Secret for Cloudflare Tunnel Credentials
 
-I am creating a secret in the `nginx` namespace, but you can create it in any namespace you prefer. Just make sure to update the ConfigMap and Deployment accordingly.
-Feel free change the path to the credential file if you have it in a different location.
+I am creating a secret in the `cloudflare` namespace, but you can create it in any namespace you prefer. Make sure to update the ConfigMap and Deployment accordingly.
+Feel free to change the path to the credential file if you have it in a different location.
 
 ```bash
-kubectl -n nginx create secret generic cloudflared-creds \
+kubectl -n cloudflare create secret generic cloudflared-creds \
  --from-file=nginx-tunnel-credential.json=/home/vijay/.cloudflared/nginx-tunnel-credential.json
 ```
 
@@ -136,6 +136,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cloudflared
+  namespace: cloudflare
 spec:
   replicas: 1
   selector:
