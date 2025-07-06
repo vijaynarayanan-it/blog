@@ -80,6 +80,7 @@ sudo cloudflared tunnel info nginx-tunnel
 Copy the tunnel ID and certificate file path for later use. I would recommend renaming the certificate file to something more meaningful, like `nginx-tunnel-credential.json`.
 
 ```bash
+sudo mkdir /home/vijay/.cloudflared && sudo chown vijay:vijay /home/vijay/.cloudflared && sudo chmod 700 /home/vijay/.cloudflared && sudo chmod 600 /home/vijay/.cloudflared/*
 sudo cp /root/.cloudflared/lmnop-0ce8-efgh-8c67-abcd.json /home/vijay/.cloudflared/nginx-tunnel-credential.json
 ```
 
@@ -91,6 +92,8 @@ I am creating a secret in the `cloudflare` namespace, but you can create it in a
 Feel free to change the path to the credential file if you have it in a different location.
 
 ```bash
+kubectl create namespace cloudflare
+
 kubectl -n cloudflare create secret generic cloudflared-creds \
  --from-file=nginx-tunnel-credential.json=/home/vijay/.cloudflared/nginx-tunnel-credential.json
 ```
@@ -187,7 +190,17 @@ Make sure your Secret, ConfigMap, and Deployment are in the same namespace or ad
 
 ---
 
-### Step 8: Expose Nginx Deployment using Ingress
+### Step 8: CNAME Configuration in Cloudflare
+
+Go to your Cloudflare dashboard and navigate to the DNS settings for your domain. Create a CNAME record for the subdomain you want to expose, pointing it to `*.yourdomain.com`.
+
+![cloudflare-tunnel-cname-setup.png](/images/cloudflare-tunnel-cname-setup.png)
+
+Without this step, the Cloudflare Tunnel won't be able to route traffic to your application.
+
+---
+
+### Step 9: Expose Nginx Deployment using Ingress
 
 ```bash
 kubectl create namespace nginx
@@ -196,7 +209,7 @@ kubectl -n nginx create deployment nginx --image=nginx:alpine --expose=nginx --p
 
 ---
 
-### Step 9: Create an Ingress Resource
+### Step 10: Create an Ingress Resource
 
 ```bash
 kubectl -n nginx create ingress nginx-ingress \
@@ -205,7 +218,7 @@ kubectl -n nginx create ingress nginx-ingress \
 
 ---
 
-### Step 10: Verify the Ingress Resource
+### Step 11: Verify the Ingress Resource
 
 ```bash
 kubectl -n nginx get ingress nginx-ingress
