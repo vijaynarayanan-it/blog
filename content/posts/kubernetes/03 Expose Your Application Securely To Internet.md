@@ -28,6 +28,9 @@ We are going to use:
 ### Step 1: Install Cloudflare Tunnel
 
 ```bash
+sudo mkdir -p --mode=0755 /usr/share/keyrings
+curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-main.gpg >/dev/null
+echo "deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared any main" | sudo tee /etc/apt/sources.list.d/cloudflared.list
 sudo apt-get update && sudo apt-get install cloudflared
 ```
 
@@ -39,7 +42,8 @@ sudo apt-get update && sudo apt-get install cloudflared
 sudo cloudflared tunnel login
 ```
 
-Don't worry, if you see login url in the server terminal, just copy it and paste it in your personal browser. After logging in, you will see a success message in the server terminal.
+Don't worry, if you see a login url in the server terminal, just copy it and paste it in your personal browser.
+After logging in, you will see a success message in the server terminal.
 
 ---
 
@@ -61,7 +65,7 @@ Example output:
 
 ```
 vijay@controlplane:~$ cloudflared tunnel create nginx-tunnel
-Tunnel credentials written to /home/vijay/.cloudflared/lmnop-0ce8-efgh-8c67-abcd.json. cloudflared chose this file based on where your origin certificate was found. Keep this file secret. To revoke these credentials, delete the tunnel.
+Tunnel credentials written to /root/.cloudflared/lmnop-0ce8-efgh-8c67-abcd.json. cloudflared chose this file based on where your origin certificate was found. Keep this file secret. To revoke these credentials, delete the tunnel.
 
 Created tunnel nginx-tunnel with id lmnop-0ce8-efgh-8c67-abcd
 ```
@@ -76,7 +80,7 @@ sudo cloudflared tunnel info nginx-tunnel
 Copy the tunnel ID and certificate file path for later use. I would recommend renaming the certificate file to something more meaningful, like `nginx-tunnel-credential.json`.
 
 ```bash
-sudo cp /home/vijay/.cloudflared/lmnop-0ce8-efgh-8c67-abcd.json /home/vijay/.cloudflared/nginx-tunnel-credential.json
+sudo cp /root/.cloudflared/lmnop-0ce8-efgh-8c67-abcd.json /home/vijay/.cloudflared/nginx-tunnel-credential.json
 ```
 
 ---

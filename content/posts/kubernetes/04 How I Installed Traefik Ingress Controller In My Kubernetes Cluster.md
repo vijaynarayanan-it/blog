@@ -66,6 +66,9 @@ In my case, I am using Cloudflare, so I will share the steps specific to Cloudfl
 ### Step 2.1: Install Cloudflare Tunnel
 
 ```bash
+sudo mkdir -p --mode=0755 /usr/share/keyrings
+curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-main.gpg >/dev/null
+echo "deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared any main" | sudo tee /etc/apt/sources.list.d/cloudflared.list
 sudo apt-get update && sudo apt-get install cloudflared
 ```
 
@@ -99,7 +102,7 @@ Example output:
 
 ```
 vijay@controlplane:~$ cloudflared tunnel create traefik-ingress-tunnel
-Tunnel credentials written to /home/vijay/.cloudflared/lmnop-0ce8-efgh-8c67-abcd.json. cloudflared chose this file based on where your origin certificate was found. Keep this file secret. To revoke these credentials, delete the tunnel.
+Tunnel credentials written to /root/.cloudflared/lmnop-0ce8-efgh-8c67-abcd.json. cloudflared chose this file based on where your origin certificate was found. Keep this file secret. To revoke these credentials, delete the tunnel.
 
 Created tunnel traefik-ingress-tunnel with id lmnop-0ce8-efgh-8c67-abcd
 ```
@@ -114,7 +117,7 @@ sudo cloudflared tunnel info traefik-ingress-tunnel
 Copy the tunnel ID and certificate file path for later use. I would recommend renaming the certificate file to something more meaningful, like `traefik-ingress-tunnel-credential.json`.
 
 ```bash
-sudo cp /home/vijay/.cloudflared/lmnop-0ce8-efgh-8c67-abcd.json /home/vijay/.cloudflared/traefik-ingress-tunnel-credential.json
+sudo cp /root/.cloudflared/lmnop-0ce8-efgh-8c67-abcd.json /home/vijay/.cloudflared/traefik-ingress-tunnel-credential.json
 ```
 
 ---
