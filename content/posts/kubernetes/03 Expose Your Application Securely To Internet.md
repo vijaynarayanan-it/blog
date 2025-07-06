@@ -194,6 +194,9 @@ Make sure your Secret, ConfigMap, and Deployment are in the same namespace or ad
 
 Go to your Cloudflare dashboard and navigate to the DNS settings for your domain. Create a CNAME record for the subdomain you want to expose, pointing it to `*.yourdomain.com`.
 
+In the `Target` field, enter the tunnel-id.cfargotunnel.com
+Example: lmnop-0ce8-efgh-8c67-abcd.cfargotunnel.com
+
 ![cloudflare-tunnel-cname-setup.png](/images/cloudflare-tunnel-cname-setup.png)
 
 Without this step, the Cloudflare Tunnel won't be able to route traffic to your application.
