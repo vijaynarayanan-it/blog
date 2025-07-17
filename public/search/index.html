@@ -10,8 +10,8 @@
 <meta name="description" content="Search - Vijay Narayanan">
 <meta name="author" content="vijay">
 <link rel="canonical" href="http://localhost:1313/search/">
-<link crossorigin="anonymous" href="http://localhost:1313/assets/css/stylesheet.4cc5f35afdf1f69b1312736dd1bf89996773b7aa200035cd47e07dbe425ed3f7.css" integrity="sha256-TMXzWv3x9psTEnNt0b&#43;JmWdzt6ogADXNR&#43;B9vkJe0/c=" rel="preload stylesheet" as="style"><link crossorigin="anonymous" rel="preload" as="fetch" href="../index.json">
-<script defer crossorigin="anonymous" src="http://localhost:1313/assets/js/search.2826037ddab446009aa4dc907d6f13e5fe42eaff23f43abcba31285b991e9c6d.js" integrity="sha256-KCYDfdq0RgCapNyQfW8T5f5C6v8j9Dq8ujEoW5kenG0="></script>
+<link crossorigin="anonymous" href="http://localhost:1313/assets/css/stylesheet.css" rel="preload stylesheet" as="style"><link crossorigin="anonymous" rel="preload" as="fetch" href="../index.json">
+<script defer crossorigin="anonymous" src="http://localhost:1313/assets/js/search.js"></script>
 <link rel="icon" href="http://localhost:1313/assets/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,38 +28,10 @@
         }
 
     </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
 </noscript><meta property="og:url" content="http://localhost:1313/search/">
   <meta property="og:site_name" content="Vijay Narayanan">
   <meta property="og:title" content="Search">
-  <meta property="og:description" content="I write about technology, programming, and my experiences in the tech industry.">
+  <meta property="og:description" content="Personal website and blog of Vijay Narayanan">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary">
@@ -119,10 +91,6 @@
 <body class="list" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.body.classList.add('dark');
     }
 

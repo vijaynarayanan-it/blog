@@ -7,10 +7,10 @@
 <meta name="robots" content="index, follow">
 <title>Proxmox | Vijay Narayanan</title>
 <meta name="keywords" content="">
-<meta name="description" content="I write about technology, programming, and my experiences in the tech industry.">
+<meta name="description" content="Personal website and blog of Vijay Narayanan">
 <meta name="author" content="vijay">
 <link rel="canonical" href="http://localhost:1313/tags/proxmox/">
-<link crossorigin="anonymous" href="http://localhost:1313/assets/css/stylesheet.4cc5f35afdf1f69b1312736dd1bf89996773b7aa200035cd47e07dbe425ed3f7.css" integrity="sha256-TMXzWv3x9psTEnNt0b&#43;JmWdzt6ogADXNR&#43;B9vkJe0/c=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="http://localhost:1313/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/assets/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,53 +28,21 @@
         }
 
     </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
 </noscript><meta property="og:url" content="http://localhost:1313/tags/proxmox/">
   <meta property="og:site_name" content="Vijay Narayanan">
   <meta property="og:title" content="Proxmox">
-  <meta property="og:description" content="I write about technology, programming, and my experiences in the tech industry.">
+  <meta property="og:description" content="Personal website and blog of Vijay Narayanan">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Proxmox">
-<meta name="twitter:description" content="I write about technology, programming, and my experiences in the tech industry.">
+<meta name="twitter:description" content="Personal website and blog of Vijay Narayanan">
 
 </head>
 
 <body class="list" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.body.classList.add('dark');
     }
 
@@ -140,31 +108,62 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">How to Remove the Proxmox VE Subscription Warning and Switch to No-Subscription Repository
+    <h2 class="entry-hint-parent">How to Enable Auto Login on Proxmox Console
     </h2>
   </header>
   <div class="entry-content">
-    <p>How to Remove the Proxmox VE Subscription Warning Introduction If you don’t have a paid Proxmox subscription, you’ll see a warning about the Enterprise repository. This is normal for home labs, but you can easily switch to the free no-subscription repository and get rid of the alert.
-Steps to Fix the Warning Open the Proxmox APT sources file: nano /etc/apt/sources.list.d/pve-enterprise.list Disable the enterprise repository: Just add a # at the start of the line so it looks like this:
+    <p>How to Enable Auto Login on Proxmox Console (TTY) What is tty? tty stands for “teletypewriter” and refers to a terminal interface in Unix-like operating systems. It allows users to interact with the system through a command-line interface.
+What is getty? getty is a program that manages physical or virtual terminals on Unix-like systems. It is responsible for prompting for a login name and starting the login process.
+If you want to enable auto-login on the Proxmox console (TTY), you can do this by modifying the getty service configuration. This allows you to log in automatically without entering a username and password each time you access the console. This is helpful when your homelab server restarts for some reason, and you want to avoid manual login.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-06-15 09:30:42 +0200 CEST'>June 6, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;165 words&nbsp;·&nbsp;vijay</footer>
-  <a class="entry-link" aria-label="post link to How to Remove the Proxmox VE Subscription Warning and Switch to No-Subscription Repository" href="http://localhost:1313/posts/proxmox-remove-subscription-warning/"></a>
+  <footer class="entry-footer"><span title='2025-02-11 00:00:00 +0000 UTC'>11 February, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;326 words&nbsp;·&nbsp;vijay</footer>
+  <a class="entry-link" aria-label="post link to How to Enable Auto Login on Proxmox Console" href="http://localhost:1313/posts/proxmox/proxmox-enable-auto-login-console/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Secure and Isolated Proxmox VE Homelab with Cloudflare Tunnel
+    <h2 class="entry-hint-parent">How to Remove Proxmox Subscription Warning
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Introduction If you don’t have a paid Proxmox subscription, you’ll see a warning about the Enterprise repository. This is normal for home labs, but you can easily switch to the free no-subscription repository and get rid of the alert.
+Steps to Fix the Warning Step 1: Open the Proxmox APT sources file nano /etc/apt/sources.list.d/pve-enterprise.list Step 2: Disable the enterprise repository Add a # at the start of the line so it looks like this:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-02-10 00:00:00 +0000 UTC'>10 February, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;203 words&nbsp;·&nbsp;vijay</footer>
+  <a class="entry-link" aria-label="post link to How to Remove Proxmox Subscription Warning" href="http://localhost:1313/posts/proxmox/proxmox-remove-subscription-warning/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Secure and Isolated Proxmox with Cloudflare Tunnel
     </h2>
   </header>
   <div class="entry-content">
     <p>Introduction This guide shows you how to set up a secure and flexible Proxmox VE homelab. You will:
 Isolate your VM network but keep internet access. Securely access the Proxmox web UI using Cloudflare Tunnel and custom DNS. Block direct IP access to the Proxmox UI. Prepare for adding more services in the future. Prerequisite Before you start, ensure you have:
-Already installed Proxmox VE on your machine. A basic understanding of Linux command line. A Cloudflare account with a domain set up (e.g., yourdomain.com). Example values we are going to use Assuming you have a Proxmox VE installation with the following network configuration: Note that these values are examples; you should replace them with your actual network settings.
+Already installed Proxmox VE on your machine. A basic understanding of Linux command line. A Cloudflare account with a domain set up (e.g., yourdomain.com). Already created a linux bridge network in Proxmox for your VMs. Check out my blog post on How to Configure DHCP Server to Create vmbr Bridge Network for guidance. Example values we are going to use Assuming you have a Proxmox VE installation with the following network configuration: Note that these values are examples. You should replace them with your actual network settings.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-06-15 09:30:42 +0200 CEST'>June 6, 2025</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;658 words&nbsp;·&nbsp;vijay</footer>
-  <a class="entry-link" aria-label="post link to Secure and Isolated Proxmox VE Homelab with Cloudflare Tunnel" href="http://localhost:1313/posts/proxmox-homelab-secure-setup-with-cloudflare-tunnel/"></a>
+  <footer class="entry-footer"><span title='2025-02-10 00:00:00 +0000 UTC'>10 February, 2025</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;718 words&nbsp;·&nbsp;vijay</footer>
+  <a class="entry-link" aria-label="post link to Secure and Isolated Proxmox with Cloudflare Tunnel" href="http://localhost:1313/posts/proxmox/secure-proxmox-with-cloudflare-tunnel/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">How to Configure DHCP Server to Create vmbr Bridge Network
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Introduction This guide will help you set up a DHCP server on your Proxmox host to create a bridge network (vmbr1) for your virtual machines (VMs). This setup allows VMs to automatically receive IP addresses and network configuration from the DHCP server.
+Also, helps in isolating the VM network while still providing internet access.
+Install DHCP Server and Configure Bridge Network Install DHCP server on Proxmox host:
+apt install isc-dhcp-server Set interface in /etc/default/isc-dhcp-server:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-02-09 00:00:00 +0000 UTC'>09 February, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;221 words&nbsp;·&nbsp;vijay</footer>
+  <a class="entry-link" aria-label="post link to How to Configure DHCP Server to Create vmbr Bridge Network" href="http://localhost:1313/posts/proxmox/how-to-configure-dhcp-server-to-create-vmbr-bridge-network/"></a>
 </article>
     </main>
     

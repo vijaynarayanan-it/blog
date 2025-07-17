@@ -4,36 +4,279 @@
     <title>Posts on Vijay Narayanan</title>
     <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Vijay Narayanan</description>
-    <generator>Hugo -- 0.147.8</generator>
+    <generator>Hugo -- 0.148.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Jun 2025 09:30:42 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 06 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>How to Remove the Proxmox VE Subscription Warning and Switch to No-Subscription Repository</title>
-      <link>http://localhost:1313/posts/proxmox-remove-subscription-warning/</link>
-      <pubDate>Sun, 15 Jun 2025 09:30:42 +0200</pubDate>
-      <guid>http://localhost:1313/posts/proxmox-remove-subscription-warning/</guid>
-      <description>&lt;h1 id=&#34;how-to-remove-the-proxmox-ve-subscription-warning&#34;&gt;How to Remove the Proxmox VE Subscription Warning&lt;/h1&gt;
-&lt;p&gt;&lt;img alt=&#34;Proxmox Subscription Warning Image&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/proxmox-ve-enterprise-subscription-alert-box-screenshot.jpeg&#34;&gt;&lt;/p&gt;
+      <title>How To Install Authentik In Kubernetes To Secure Applications</title>
+      <link>http://localhost:1313/posts/kubernetes/how-to-install-authentik-in-kubernetes-to-secure-applications/</link>
+      <pubDate>Sun, 06 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/kubernetes/how-to-install-authentik-in-kubernetes-to-secure-applications/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;&lt;img alt=&#34;authentik-installation-blog.png&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/authentik-installation-blog.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Authentik is an open-source identity provider that can be used to manage authentication and authorization for your applications.
+In this guide, I will explain how to install Authentik in a Kubernetes cluster to secure applications.&lt;/p&gt;
+&lt;h1 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;A Kubernetes cluster with Traefik installed.&lt;/li&gt;
+&lt;li&gt;Helm package manager installed and has required permissions to install and manage resources in the cluster.&lt;/li&gt;
+&lt;li&gt;Cloudflare account with your domain configured.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.vijay-narayanan.com/posts/kubernetes/how-to-set-up-traefik-ingress-controller-in-kubernetes&#34;&gt;Already configured Cloudflare tunnel to use Traefik Ingress Controller&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;installation-guide&#34;&gt;Installation Guide&lt;/h1&gt;
+&lt;h2 id=&#34;step-1-generate-secrets&#34;&gt;Step 1: Generate Secrets&lt;/h2&gt;
+&lt;p&gt;Before we prepare the Helm chart values file, we need to create a secretKey for Authentik to sign the JWT tokens and create a password for PostgreSQL database.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How To Secure Kubernetes Public Web Applications Using Authentik</title>
+      <link>http://localhost:1313/posts/kubernetes/how-to-secure-kubernetes-public-web-applications-using-authentik/</link>
+      <pubDate>Sun, 06 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/kubernetes/how-to-secure-kubernetes-public-web-applications-using-authentik/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;In this guide, we will explore how to secure public web applications running on Kubernetes using Authentik, a modern open-source identity provider.
+We will also leverage Cloudflare for additional security and performance enhancements.
+The setup will include Traefik as the ingress controller to manage incoming traffic to our applications.&lt;/p&gt;
+&lt;h1 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;A Kubernetes cluster up and running.&lt;/li&gt;
+&lt;li&gt;Helm installed for managing Kubernetes applications.&lt;/li&gt;
+&lt;li&gt;Traefik installed as the ingress controller.&lt;/li&gt;
+&lt;li&gt;Authentik installed in your Kubernetes cluster.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please check my previous posts for detailed instructions on how to set up Traefik and Authentik in Kubernetes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How To Securely Expose Traefik Dashboard In Kubernetes</title>
+      <link>http://localhost:1313/posts/kubernetes/how-to-securely-expose-traefik-dashboard-in-kubernetes/</link>
+      <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/kubernetes/how-to-securely-expose-traefik-dashboard-in-kubernetes/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;In this guide, I will explain how to securely expose the Traefik dashboard in a Kubernetes cluster using Cloudflare.
+The Traefik dashboard provides insights into the traffic and routing within your cluster, but it should be secured to prevent unauthorized access.&lt;/p&gt;
+&lt;h1 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;A Kubernetes cluster with Traefik installed.&lt;/li&gt;
+&lt;li&gt;Helm package manager installed and has required permissions to install and manage resources in the cluster.&lt;/li&gt;
+&lt;li&gt;Cloudflare account with your domain configured.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.vijay-narayanan.com/posts/kubernetes/how-to-set-up-traefik-ingress-controller-in-kubernetes&#34;&gt;Already configured Cloudflare tunnel to use Traefik Ingress Controller&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>How to set up Traefik Ingress Controller in Kubernetes</title>
+      <link>http://localhost:1313/posts/kubernetes/how-to-set-up-traefik-ingress-controller-in-kubernetes/</link>
+      <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/kubernetes/how-to-set-up-traefik-ingress-controller-in-kubernetes/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;I am using Nginx Ingress Controller for my Kubernetes cluster, but I wanted to set up Traefik as well for specific use cases.
+This guide explains how I installed Traefik on my Kubernetes cluster using Helm.&lt;/p&gt;
+&lt;h1 id=&#34;why-i-want-to-use-traefik&#34;&gt;Why I want to use Traefik&lt;/h1&gt;
+&lt;p&gt;I want to use authentication features for my applications, and my Nginx Ingress Controller setup requires enabling &lt;code&gt;allow-snippet-annotations&lt;/code&gt; and setting &lt;code&gt;annotations-risk-level&lt;/code&gt; to Critical.
+This is because Nginx Ingress Controller uses annotations for advanced configurations, which can be risky if not managed properly.
+Traefik, on the other hand, does not require such risky configurations and provides a safer way to manage ingress rules and features. So I decided to switch to Traefik as my primary Ingress Controller.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How To Upgrade Containerd version in Kubernetes</title>
+      <link>http://localhost:1313/posts/kubernetes/how-to-upgrade-containerd-version-in-kubernetes/</link>
+      <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/kubernetes/how-to-upgrade-containerd-version-in-kubernetes/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Containerd is a core component of Kubernetes that manages container lifecycle.
+Upgrading containerd can bring performance improvements, bug fixes, and new features.
+This guide will walk you through the steps to upgrade Containerd on a Kubernetes node.&lt;/p&gt;
+&lt;h1 id=&#34;deployment-script&#34;&gt;Deployment Script&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CURRENT_VERSION&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;v2.1.3&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;ARCH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;linux-amd64&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;DOWNLOAD_URL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;https://github.com/containerd/containerd/releases/download/&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;CURRENT_VERSION&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;/containerd-&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;CURRENT_VERSION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;#v&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ARCH&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.tar.gz&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Draining node...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl drain &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;hostname&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt; --ignore-daemonsets --delete-emptydir-data
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Stopping containerd...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl stop containerd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Removing old containerd...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt remove -y containerd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Downloading containerd &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$CURRENT_VERSION&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget -q &lt;span class=&#34;nv&#34;&gt;$DOWNLOAD_URL&lt;/span&gt; -O containerd.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Extracting and installing containerd...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tar -xvf containerd.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo cp bin/* /usr/local/bin/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Setting up systemd service...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl unmask containerd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo wget -q -O /etc/systemd/system/containerd.service https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl daemon-reexec
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl daemon-reload
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; --now containerd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Generating config and setting SystemdCgroup...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mkdir -p /etc/containerd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo bash -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;containerd config default &amp;gt; /etc/containerd/config.toml&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/SystemdCgroup = false/SystemdCgroup = true/&amp;#39;&lt;/span&gt; /etc/containerd/config.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Restarting containerd and kubelet...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl restart containerd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl restart kubelet
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Updated. Current containerd version:&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;containerd --version
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>How To Self-Host JetBrains YouTrack Project Management Tool In Kubernetes</title>
+      <link>http://localhost:1313/posts/self-hosting/how-to-self-host-jetbrains-youtrack-project-management-tool-in-kubernetes/</link>
+      <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/self-hosting/how-to-self-host-jetbrains-youtrack-project-management-tool-in-kubernetes/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;In this guide, I will walk through the process of self-hosting JetBrains YouTrack, a powerful project management tool, in a Kubernetes environment. YouTrack is designed to help teams manage their projects efficiently with features like issue tracking, agile boards, and customizable workflows.
+It is also free for up to 10 users, making it an excellent choice for small teams or personal projects.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;youtrack-homepage.png&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/youtrack-homepage.png&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h1&gt;
+&lt;p&gt;Before we begin, ensure you have the following prerequisites:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Check Your Public IP for Exposed Open Ports</title>
+      <link>http://localhost:1313/posts/security/check-public-ip-open-ports/</link>
+      <pubDate>Sat, 28 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/security/check-public-ip-open-ports/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;This guide will help you identify if your public IP address has any open ports or services that could be unintentionally exposed to the internet.
+This is crucial for maintaining the security of your network and devices.&lt;/p&gt;
+&lt;p&gt;Based on RFC1918, private IP addresses are not routable on the public internet.&lt;/p&gt;
+&lt;p&gt;What is RFC1918?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RFC1918 is a standard that defines private IP address ranges that are reserved for use within private networks.&lt;/li&gt;
+&lt;li&gt;RFC1918 designates the following three ranges for private networks:
+&lt;ul&gt;
+&lt;li&gt;10.0.0.0 - 10.255.255.255: (10.0.0.0/8)&lt;/li&gt;
+&lt;li&gt;172.16.0.0 - 172.31.255.255: (172.16.0.0/12)&lt;/li&gt;
+&lt;li&gt;192.168.0.0 - 192.168.255.255: (192.168.0.0/16)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;steps&#34;&gt;Steps&lt;/h1&gt;
+&lt;p&gt;You can use online tools to scan your public IP address for open ports and services.
+Use a port scan tool like &lt;strong&gt;Censys&lt;/strong&gt; to search for a public IP address.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Expose Kubernetes Applications Securely to the Internet with Cloudflare Tunnel and Nginx Ingress</title>
+      <link>http://localhost:1313/posts/kubernetes/expose-k8s-apps-to-internet-using-cloudflare-tunnel/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/kubernetes/expose-k8s-apps-to-internet-using-cloudflare-tunnel/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;In this guide, we will learn how to expose a Kubernetes application securely to the internet using Cloudflare Tunnel and Nginx Ingress. This setup allows you to leverage Cloudflare&amp;rsquo;s security features while managing your application traffic efficiently.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;intro-expose-k8s-apps-to-internet.png&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/intro-expose-k8s-apps-to-internet.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;We are going to use:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cloudflare Tunnel to expose our application securely to the internet.&lt;/li&gt;
+&lt;li&gt;Kubernetes Nginx Ingress to route traffic to our application.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;A Cloudflare account with the domain added.&lt;/li&gt;
+&lt;li&gt;A Kubernetes cluster set up with Nginx Ingress Controller installed.&lt;/li&gt;
+&lt;li&gt;Root or sudo access to the Kubernetes cluster.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;deployment-guide&#34;&gt;Deployment Guide&lt;/h1&gt;
+&lt;h3 id=&#34;step-1-install-cloudflare-tunnel&#34;&gt;Step 1: Install Cloudflare Tunnel&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mkdir -p --mode&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0755&lt;/span&gt; /usr/share/keyrings
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo tee /usr/share/keyrings/cloudflare-main.gpg &amp;gt;/dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared any main&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/cloudflared.list
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt-get install cloudflared
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;step-2-authenticate-cloudflare-tunnel&#34;&gt;Step 2: Authenticate Cloudflare Tunnel&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo cloudflared tunnel login
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Don&amp;rsquo;t worry, if you see a login url in the server terminal, just copy it and paste it in your personal browser.
+After logging in, you will see a success message in the server terminal.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to install Metrics Server on Kubernetes</title>
+      <link>http://localhost:1313/posts/kubernetes/install-metrics-server-kubernetes/</link>
+      <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/kubernetes/install-metrics-server-kubernetes/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Metrics Server is a cluster-wide aggregator of resource usage data in Kubernetes.
+It collects metrics from the kubelet on each node and provides them to the Kubernetes API server, which can be used for horizontal pod autoscaling and other purposes.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;how-metrics-server-works.png&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/how-metrics-server-works.png&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;A running Kubernetes cluster (version 1.8 or later).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;kubectl&lt;/code&gt; command-line tool installed and configured to communicate with your cluster.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;installation-steps&#34;&gt;Installation Steps&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;verification&#34;&gt;Verification&lt;/h1&gt;
+&lt;p&gt;To verify that Metrics Server is running correctly, you can check the status of the Metrics Server pod:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Set Up a 3-Node Kubernetes Cluster with Kubeadm</title>
+      <link>http://localhost:1313/posts/kubernetes/kubeadm-kubernetes-3-node-cluster-setup-guide/</link>
+      <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/kubernetes/kubeadm-kubernetes-3-node-cluster-setup-guide/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;kubeadm-3node-cluster-setup.png&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/kubeadm-3node-cluster-setup.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This guide will walk you through the following steps to set up a 3-node Kubernetes cluster using kubeadm:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Configure unique hostnames for each node.&lt;/li&gt;
+&lt;li&gt;Set up networking and update the &lt;code&gt;/etc/hosts&lt;/code&gt; file.&lt;/li&gt;
+&lt;li&gt;Install required system packages and disable swap.&lt;/li&gt;
+&lt;li&gt;Install and configure the container runtime (&lt;code&gt;containerd&lt;/code&gt;) and enable IP forwarding.&lt;/li&gt;
+&lt;li&gt;Install Kubernetes components: &lt;code&gt;kubeadm&lt;/code&gt;, &lt;code&gt;kubelet&lt;/code&gt;, and &lt;code&gt;kubectl&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Initialize the control plane node with &lt;code&gt;kubeadm&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Set up pod networking using Calico CNI.&lt;/li&gt;
+&lt;li&gt;Join worker nodes to the cluster.&lt;/li&gt;
+&lt;li&gt;Verify the cluster status and apply additional configurations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Create three VMs or physical servers with Ubuntu 22.04 LTS or later.&lt;/li&gt;
+&lt;li&gt;Make sure all nodes can communicate with each other over the network and has internet access.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
+&lt;h3 id=&#34;step-1-setup-hostnames-on-all-nodes&#34;&gt;Step 1: Setup Hostnames on all nodes&lt;/h3&gt;
+&lt;p&gt;On each node, set a unique hostname using the following command:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Enable Auto Login on Proxmox Console</title>
+      <link>http://localhost:1313/posts/proxmox/proxmox-enable-auto-login-console/</link>
+      <pubDate>Tue, 11 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/proxmox/proxmox-enable-auto-login-console/</guid>
+      <description>&lt;h1 id=&#34;how-to-enable-auto-login-on-proxmox-console-tty&#34;&gt;How to Enable Auto Login on Proxmox Console (TTY)&lt;/h1&gt;
+&lt;h4 id=&#34;what-is-tty&#34;&gt;What is tty?&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;tty&lt;/code&gt; stands for &amp;ldquo;teletypewriter&amp;rdquo; and refers to a terminal interface in Unix-like operating systems. It allows users to interact with the system through a command-line interface.&lt;/p&gt;
+&lt;h4 id=&#34;what-is-getty&#34;&gt;What is &lt;code&gt;getty&lt;/code&gt;?&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;getty&lt;/code&gt; is a program that manages physical or virtual terminals on Unix-like systems. It is responsible for prompting for a login name and starting the login process.&lt;/p&gt;
+&lt;p&gt;If you want to enable auto-login on the Proxmox console (TTY), you can do this by modifying the &lt;code&gt;getty&lt;/code&gt; service configuration. This allows you to log in automatically without entering a username and password each time you access the console.
+This is helpful when your homelab server restarts for some reason, and you want to avoid manual login.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Remove Proxmox Subscription Warning</title>
+      <link>http://localhost:1313/posts/proxmox/proxmox-remove-subscription-warning/</link>
+      <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/proxmox/proxmox-remove-subscription-warning/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;Proxmox Subscription Warning Image&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/proxmox-ve-enterprise-subscription-alert-box-screenshot.jpeg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;If you don’t have a paid Proxmox subscription, you’ll see a warning about the Enterprise repository. This is normal for home labs, but you can easily switch to the free no-subscription repository and get rid of the alert.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;steps-to-fix-the-warning&#34;&gt;Steps to Fix the Warning&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Open the Proxmox APT sources file:&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&#34;step-1-open-the-proxmox-apt-sources-file&#34;&gt;Step 1: Open the Proxmox APT sources file&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nano /etc/apt/sources.list.d/pve-enterprise.list
-&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;&lt;strong&gt;Disable the enterprise repository:&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Just add a &lt;code&gt;#&lt;/code&gt; at the start of the line so it looks like this:&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h3 id=&#34;step-2-disable-the-enterprise-repository&#34;&gt;Step 2: Disable the enterprise repository&lt;/h3&gt;
+&lt;p&gt;Add a &lt;code&gt;#&lt;/code&gt; at the start of the line so it looks like this:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Secure and Isolated Proxmox VE Homelab with Cloudflare Tunnel</title>
-      <link>http://localhost:1313/posts/proxmox-homelab-secure-setup-with-cloudflare-tunnel/</link>
-      <pubDate>Sun, 15 Jun 2025 09:30:42 +0200</pubDate>
-      <guid>http://localhost:1313/posts/proxmox-homelab-secure-setup-with-cloudflare-tunnel/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/h2&gt;
+      <title>Secure and Isolated Proxmox with Cloudflare Tunnel</title>
+      <link>http://localhost:1313/posts/proxmox/secure-proxmox-with-cloudflare-tunnel/</link>
+      <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/proxmox/secure-proxmox-with-cloudflare-tunnel/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;This guide shows you how to set up a secure and flexible Proxmox VE homelab. You will:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Isolate your VM network but keep internet access.&lt;/li&gt;
@@ -42,16 +285,30 @@
 &lt;li&gt;Prepare for adding more services in the future.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img alt=&#34;proxmox-ve-setup-title-image.png&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/proxmox-ve-setup-title-image.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;prerequisite&#34;&gt;&lt;strong&gt;Prerequisite&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;prerequisite&#34;&gt;Prerequisite&lt;/h2&gt;
 &lt;p&gt;Before you start, ensure you have:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Already installed Proxmox VE on your machine.&lt;/li&gt;
 &lt;li&gt;A basic understanding of Linux command line.&lt;/li&gt;
 &lt;li&gt;A Cloudflare account with a domain set up (e.g., &lt;code&gt;yourdomain.com&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Already created a linux bridge network in Proxmox for your VMs. Check out my blog post on &lt;a href=&#34;https://www.vijay-narayanan.com/posts/how-to-configure-dhcp-server-to-create-vmbr-bridge-network&#34;&gt;How to Configure DHCP Server to Create vmbr Bridge Network&lt;/a&gt; for guidance.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;example-values-we-are-going-to-use&#34;&gt;&lt;strong&gt;Example values we are going to use&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;example-values-we-are-going-to-use&#34;&gt;Example values we are going to use&lt;/h2&gt;
 &lt;p&gt;Assuming you have a Proxmox VE installation with the following network configuration:
-Note that these values are examples; you should replace them with your actual network settings.&lt;/p&gt;</description>
+Note that these values are examples. You should replace them with your actual network settings.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Configure DHCP Server to Create vmbr Bridge Network</title>
+      <link>http://localhost:1313/posts/proxmox/how-to-configure-dhcp-server-to-create-vmbr-bridge-network/</link>
+      <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/proxmox/how-to-configure-dhcp-server-to-create-vmbr-bridge-network/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This guide will help you set up a DHCP server on your Proxmox host to create a bridge network (&lt;code&gt;vmbr1&lt;/code&gt;) for your virtual machines (VMs). This setup allows VMs to automatically receive IP addresses and network configuration from the DHCP server.&lt;/p&gt;
+&lt;p&gt;Also, helps in isolating the VM network while still providing internet access.&lt;/p&gt;
+&lt;h2 id=&#34;install-dhcp-server-and-configure-bridge-network&#34;&gt;Install DHCP Server and Configure Bridge Network&lt;/h2&gt;
+&lt;p&gt;Install DHCP server on Proxmox host:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt install isc-dhcp-server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Set interface in &lt;code&gt;/etc/default/isc-dhcp-server&lt;/code&gt;:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
