@@ -7,4 +7,5 @@
 .hugo_build.lock
 node_modules/
 public/
+public/404.html
 resources/
