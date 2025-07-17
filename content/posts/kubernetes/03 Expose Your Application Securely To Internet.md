@@ -207,7 +207,8 @@ Without this step, the Cloudflare Tunnel won't be able to route traffic to your 
 
 ```bash
 kubectl create namespace nginx
-kubectl -n nginx create deployment nginx --image=nginx:alpine --expose=nginx --port=443
+kubectl -n nginx create deployment nginx --image=nginx:alpine
+kubectl -n nginx expose deployment nginx --port 80
 ```
 
 ---
