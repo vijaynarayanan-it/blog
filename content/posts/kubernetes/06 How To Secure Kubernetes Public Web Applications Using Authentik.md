@@ -65,6 +65,8 @@ kubectl apply -f nginx-ingressroute.yaml
 
 Verify that the application is accessible via Traefik by visiting `https://nginx.yourdomain.com`.
 
+![00-nginx-site-without-authentik.png](/images/00-nginx-site-without-authentik.png)
+
 Now the problem is that anyone can access this application without any authentication.
 To secure this application, we will use Authentik to enforce authentication before allowing access.
 
@@ -147,6 +149,99 @@ The Next step is to configure Traefik to use this outpost for authentication.
 
 ## Step 3: Configure Traefik to use Authentik
 
+Now that we have set up Authentik, we need to configure Traefik to use the outpost we created for authentication.
+
+### Step 3.1: Create Middleware for Authentik
+
+Create a middleware in Traefik that will use the Authentik outpost for authentication.
+
+Create a file named `authentik-middleware.yaml` with the following content:
+
+```yaml
+# authentik-middleware.yaml
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: authentik-forwardauth-nginx
+  namespace: nginx
+spec:
+  forwardAuth:
+    address: http://k8s-my-nginx-app-outpost.authentik.svc.cluster.local:9000/outpost.goauthentik.io/auth/traefik
+    authResponseHeaders:
+      - X-Authentik-Username
+      - X-Authentik-Groups
+      - X-Authentik-Email
+    trustForwardHeader: true
+```
+
+Make sure to replace `k8s-my-nginx-app-outpost` with the name of your outpost and `nginx` with the namespace where your application is running.
+
+The above middleware will forward authentication requests to the Authentik outpost and set the necessary headers for Traefik to use.
+
+Apply the middleware to your Kubernetes cluster:
+
+```bash
+kubectl apply -f authentik-middleware.yaml
+```
+
+### Step 3.2: Update IngressRoute to use Middleware
+
+Now, we need to update the IngressRoute for our application to use the middleware we just created.
+
+Edit the `nginx-ingressroute.yaml` file to include the middleware:
+
+```yaml
+# nginx-ingressroute.yaml
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: nginx
+  namespace: nginx
+spec:
+  entryPoints:
+  - websecure
+  routes:
+  - kind: Rule
+    match: Host(`nginx.yourdomain.com`)
+    middlewares:
+     - name: authentik-forwardauth-nginx
+       namespace: nginx
+    services:
+     - name: nginx
+       port: 80
+```
+
+Here, we have added the middleware `authentik-forwardauth-nginx` to the IngressRoute, which will handle authentication requests.
+
+Apply the updated IngressRoute:
+
+```bash
+kubectl apply -f nginx-ingressroute.yaml
+```
+
+
+Once the IngressRoute is updated, Traefik will start using Authentik for authentication.
+
+# Step 4: Test the Setup
+
+Visit your application URL (e.g., `https://nginx.yourdomain.com`).
+
+You should be redirected to the Authentik login page for authentication.
+
+![16-login-page.png](/images/16-login-page.png)
+
+Once you log in, you will be prompted to authorize the application.
+
+![17-successful-authentik-redirect.png](/images/17-successful-authentik-redirect.png)
+
+If everything is set up correctly, you should be able to access your application after successful authentication.
+
+---
+
+# Conclusion
+
+In this guide, we have successfully secured a public web application running on Kubernetes using Authentik as the identity provider.
+---
 
 
 
