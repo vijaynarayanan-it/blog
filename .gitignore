@@ -4,5 +4,7 @@
 /.idea/modules.xml
 /.idea/vcs.xml
 
-/public/*
-/public/
+.hugo_build.lock
+node_modules/
+public/
+resources/
