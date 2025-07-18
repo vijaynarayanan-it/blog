@@ -2,7 +2,7 @@
 date: 2025-02-15
 draft: false
 title: 'How to Set Up a 3-Node Kubernetes Cluster with Kubeadm'
-slug: 'kubeadm-kubernetes-3-node-cluster-setup-guide'
+slug: 'kubeadm-3-node-kubernetes-cluster'
 tags: [☸️ kubernetes, kubeadm]
 ---
 

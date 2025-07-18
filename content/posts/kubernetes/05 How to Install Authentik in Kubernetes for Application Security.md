@@ -1,8 +1,8 @@
 ---
 date: 2025-07-06
 draft: false
-title: 'How To Install Authentik In Kubernetes To Secure Applications'
-slug: 'how-to-install-authentik-in-kubernetes-to-secure-applications'
+title: 'How to Install Authentik in Kubernetes for Application Security'
+slug: 'install-authentik-kubernetes'
 tags: [☸️ kubernetes, 🌐 cloudflare, 🔐 authentik, 🛠️ traefik]
 ---
 
@@ -17,7 +17,7 @@ In this guide, I will explain how to install Authentik in a Kubernetes cluster t
 - A Kubernetes cluster with Traefik installed.
 - Helm package manager installed and has required permissions to install and manage resources in the cluster.
 - Cloudflare account with your domain configured.
-- [Already configured Cloudflare tunnel to use Traefik Ingress Controller](https://www.vijay-narayanan.com/posts/kubernetes/how-to-set-up-traefik-ingress-controller-in-kubernetes).
+- [Already configured Cloudflare tunnel to use Traefik Ingress Controller](https://www.vijay-narayanan.com/posts/kubernetes/setup-traefik-ingress-kubernetes).
 
 # Installation Guide
 

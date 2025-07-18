@@ -1,8 +1,8 @@
 ---
 date: 2025-07-05
 draft: false
-title: 'How To Securely Expose Traefik Dashboard In Kubernetes'
-slug: 'how-to-securely-expose-traefik-dashboard-in-kubernetes'
+title: 'How to Securely Expose the Traefik Dashboard in Kubernetes'
+slug: 'secure-traefik-dashboard-kubernetes'
 tags: [☸️ kubernetes, 🌐 cloudflare, 🔐 Authentik, 🛠️ traefik]
 ---
 
@@ -15,7 +15,7 @@ The Traefik dashboard provides insights into the traffic and routing within your
 - A Kubernetes cluster with Traefik installed.
 - Helm package manager installed and has required permissions to install and manage resources in the cluster.
 - Cloudflare account with your domain configured.
-- [Already configured Cloudflare tunnel to use Traefik Ingress Controller](https://www.vijay-narayanan.com/posts/kubernetes/how-to-set-up-traefik-ingress-controller-in-kubernetes).
+- [Already configured Cloudflare tunnel to use Traefik Ingress Controller](https://www.vijay-narayanan.com/posts/kubernetes/setup-traefik-ingress-kubernetes).
 
 
 

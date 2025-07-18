@@ -1,16 +1,16 @@
 ---
 date: 2025-02-18
 draft: false
-title: 'Expose Kubernetes Applications Securely to the Internet with Cloudflare Tunnel and Nginx Ingress'
-slug: 'expose-k8s-apps-to-internet-using-cloudflare-tunnel'
+title: 'How to Expose Kubernetes Apps Using Cloudflare Tunnel and NGINX Ingress'
+slug: 'expose-kubernetes-apps-cloudflare-nginx'
 tags: [☸️ kubernetes, 🌐 cloudflare]
 ---
+
+![how-to-expose-applications-securely-using-cloudflare.png](/images/how-to-expose-applications-securely-using-cloudflare.png)
 
 # Introduction
 
 In this guide, we will learn how to expose a Kubernetes application securely to the internet using Cloudflare Tunnel and Nginx Ingress. This setup allows you to leverage Cloudflare's security features while managing your application traffic efficiently.
-
-![intro-expose-k8s-apps-to-internet.png](/images/intro-expose-k8s-apps-to-internet.png)
 
 We are going to use:
 

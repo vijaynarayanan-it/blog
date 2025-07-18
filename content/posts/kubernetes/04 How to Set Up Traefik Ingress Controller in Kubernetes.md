@@ -1,8 +1,8 @@
 ---
 date: 2025-07-05
 draft: false
-title: 'How to set up Traefik Ingress Controller in Kubernetes'
-slug: 'how-to-set-up-traefik-ingress-controller-in-kubernetes'
+title: 'How to Set Up Traefik Ingress Controller in Kubernetes'
+slug: 'setup-traefik-ingress-kubernetes'
 tags: [☸️ kubernetes, 🌐 cloudflare, 🛠️ traefik]
 ---
 

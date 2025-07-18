@@ -1,8 +1,8 @@
 ---
 date: 2025-07-06
 draft: false
-title: 'How To Secure Kubernetes Public Web Applications Using Authentik'
-slug: 'how-to-secure-kubernetes-public-web-applications-using-authentik'
+title: 'How to Secure Public Kubernetes Web Applications Using Authentik'
+slug: 'secure-kubernetes-web-apps-authentik'
 tags: [☸️ kubernetes, 🌐 cloudflare, 🔐 authentik, 🛠️ traefik]
 ---
 
@@ -21,9 +21,9 @@ The setup will include Traefik as the ingress controller to manage incoming traf
 
 Please check my previous posts for detailed instructions on how to set up Traefik and Authentik in Kubernetes.
 
-[How to Install Traefik in Kubernetes](https://www.vijay-narayanan.com/posts/kubernetes/how-to-set-up-traefik-ingress-controller-in-kubernetes/)
+[How to Install Traefik in Kubernetes](https://www.vijay-narayanan.com/posts/kubernetes/setup-traefik-ingress-kubernetes/)
 
-[How to Install Authentik in Kubernetes](https://www.vijay-narayanan.com/posts/kubernetes/how-to-install-authentik-in-kubernetes-to-secure-applications/)
+[How to Install Authentik in Kubernetes](https://www.vijay-narayanan.com/posts/kubernetes/install-authentik-kubernetes/)
 
 # Setup Guide
 
@@ -219,8 +219,9 @@ Apply the updated IngressRoute:
 kubectl apply -f nginx-ingressroute.yaml
 ```
 
-
 Once the IngressRoute is updated, Traefik will start using Authentik for authentication.
+
+---
 
 # Step 4: Test the Setup
 
@@ -241,6 +242,7 @@ If everything is set up correctly, you should be able to access your application
 # Conclusion
 
 In this guide, we have successfully secured a public web application running on Kubernetes using Authentik as the identity provider.
+
 ---
 
 

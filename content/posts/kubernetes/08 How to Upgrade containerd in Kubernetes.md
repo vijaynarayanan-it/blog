@@ -1,8 +1,8 @@
 ---
 date: 2025-07-05
 draft: false
-title: 'How To Upgrade Containerd version in Kubernetes'
-slug: 'how-to-upgrade-containerd-version-in-kubernetes'
+title: 'How to Upgrade containerd in Kubernetes'
+slug: 'upgrade-containerd-kubernetes'
 tags: [☸️ kubernetes, 📦 containerd]
 ---
 
