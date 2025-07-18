@@ -1,8 +1,8 @@
 ---
 date: 2025-06-28
 draft: false
-title: 'Check Your Public IP for Exposed Open Ports'
-slug: 'check-public-ip-open-ports'
+title: 'Check Your Public IP for Open and Exposed Ports'
+slug: 'check-open-ports-public-ip'
 tags: [🛡️ security]
 ---
 

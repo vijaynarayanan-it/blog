@@ -1,7 +1,7 @@
 ---
 date: 2025-02-10
 draft: false
-title: 'Secure and Isolated Proxmox with Cloudflare Tunnel'
+title: 'Securing and Isolating Proxmox with Cloudflare Tunnel'
 slug: 'secure-proxmox-with-cloudflare-tunnel'
 tags: [proxmox, 🏠 homelab]
 ---
@@ -24,7 +24,7 @@ Before you start, ensure you have:
 - Already installed Proxmox VE on your machine.
 - A basic understanding of Linux command line.
 - A Cloudflare account with a domain set up (e.g., `yourdomain.com`).
-- Already created a linux bridge network in Proxmox for your VMs. Check out my blog post on [How to Configure DHCP Server to Create vmbr Bridge Network](https://www.vijay-narayanan.com/posts/how-to-configure-dhcp-server-to-create-vmbr-bridge-network) for guidance.
+- Already created a linux bridge network in Proxmox for your VMs. Check out my blog post on [How to Configure DHCP Server to Create vmbr Bridge Network](https://www.vijay-narayanan.com/posts/configure-dhcp-vmbr-bridge) for guidance.
 
 ## Example values we are going to use
 
@@ -68,7 +68,7 @@ homelab
 
 ### Step 2: Isolate your VM network but keep internet access
 
-To create an isolated linux bridge network, check out my blog [How to Configure DHCP Server to Create vmbr Bridge Network](https://www.vijay-narayanan.com/posts/how-to-configure-dhcp-server-to-create-vmbr-bridge-network).
+To create an isolated linux bridge network, check out my blog [How to Configure DHCP Server to Create vmbr Bridge Network](https://www.vijay-narayanan.com/posts/configure-dhcp-vmbr-bridge).
 
 If you want your Proxmox and its VMs on an isolated internal virtual network, but still able to access the internet. Follow these steps:
 

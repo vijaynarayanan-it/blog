@@ -6,6 +6,8 @@ slug: 'upgrade-containerd-kubernetes'
 tags: [☸️ kubernetes, 📦 containerd]
 ---
 
+![upgrade-containerd-version.png](/images/upgrade-containerd-kubernetes.png)
+
 # Introduction
 
 Containerd is a core component of Kubernetes that manages container lifecycle.

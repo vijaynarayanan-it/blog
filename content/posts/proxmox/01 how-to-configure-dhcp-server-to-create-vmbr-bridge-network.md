@@ -1,8 +1,8 @@
 ---
 date: 2025-02-09
 draft: false
-title: 'How to Configure DHCP Server to Create vmbr Bridge Network'
-slug: 'how-to-configure-dhcp-server-to-create-vmbr-bridge-network'
+title: 'How to Configure a DHCP Server for vmbr Bridge Networking'
+slug: 'configure-dhcp-vmbr-bridge'
 tags: [proxmox, 🏠 homelab]
 ---
 

@@ -1,10 +1,11 @@
 ---
 date: 2025-02-11
 draft: false
-title: 'How to Enable Auto Login on Proxmox Console'
-slug: 'proxmox-enable-auto-login-console'
+title: 'How to Enable Auto-Login on the Proxmox Console'
+slug: 'enable-auto-login-proxmox-console'
 tags: [proxmox, 🏠 homelab]
 ---
+
 # How to Enable Auto Login on Proxmox Console (TTY)
 
 #### What is tty?

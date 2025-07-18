@@ -1,8 +1,8 @@
 ---
 date: 2025-07-02
 draft: false
-title: 'How To Self-Host JetBrains YouTrack Project Management Tool In Kubernetes'
-slug: 'how-to-self-host-jetbrains-youtrack-project-management-tool-in-kubernetes'
+title: 'How to Self-Host JetBrains YouTrack in Kubernetes'
+slug: 'self-host-youtrack-kubernetes'
 tags: [🏠 self-hosting, ☸️ kubernetes, 🗂️ project-management]
 ---
 

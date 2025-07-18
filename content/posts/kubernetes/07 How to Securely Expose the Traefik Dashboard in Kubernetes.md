@@ -6,6 +6,8 @@ slug: 'secure-traefik-dashboard-kubernetes'
 tags: [☸️ kubernetes, 🌐 cloudflare, 🔐 Authentik, 🛠️ traefik]
 ---
 
+![how-to-expose-traefik-dashboard.png](/images/how-to-expose-traefik-dashboard.png)
+
 # Introduction
 
 In this guide, I will explain how to securely expose the Traefik dashboard in a Kubernetes cluster using Cloudflare.
