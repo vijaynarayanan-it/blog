@@ -13,7 +13,7 @@ buildExpired: false
 
 # Pagination
 pagination:
-  pagerSize: 10
+  pagerSize: 5
 
 # Syntax highlighting
 pygmentsUseClasses: true # Use CSS classes for syntax highlighting
